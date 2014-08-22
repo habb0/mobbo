@@ -1,0 +1,62 @@
+La instalación de mobbo puede tardar hasta 15 minutos, dependiendo de su conexión a Internet
+Bienvenido al programa de instalación , siga los pasos para instalar mobbo
+bienvenido
+En esta configuración, usted puede configurar el nuevo CMS y esto mobbo Wonderfull y ahora usted es un poco para ir a la mobbo Mundial
+configuración de MySQL
+Por favor, introduzca la configuración de MySQL, las necesidades de la base de datos ya existe , y la configuración deben ser válidos
+Por favor Digit Tu anfitrión MySQL
+Por favor Digit Tu usuario MySQL
+Por favor Digit Su pasaje MySQL
+Por favor Analice su base de datos MySQL
+Seleccione la cuenta de administrador
+Abrir una cuenta de administrador , esta cuenta NO PUEDE ESTAR ALLÍ !
+Cuenta de usuario Nombre
+senha
+cuenta Clasificación
+configuración de plantilla
+Elija un modelo para instalar en mobbo
+Seleccione Modelo
+Configuración básica
+Esta es la configuración básica ( Customer Choice y El nombre del hotel ;)
+Seleccione Cliente
+Un nombre para el hotel
+Instale CMS !
+Elija el tipo de conexión de su base de datos
+Elija Puerta DB
+Porfavor Haga clic una sola vez
+Acceso hoteleros
+Introduzca su nombre de usuario
+Ingrese su Contraseña
+El gestor de contenidos más avanzados
+para Habbo Hotel
+Registrarse Ahora
+Registrarse Ahora
+Administrador de Atención, el hotel está en mantenimiento, si usted dice, no tiene cuidado sesión!
+Hoy es
+Actualización de su estado
+Introduzca hotel
+Salir del sistema
+Información .
+nombre
+Cita del día
+Monedas:
+noticias
+Bienvenido .
+Su página está en construcción , ser feliz y disfrutar de la página! .
+Referidos
+Ver sus remisiones Enlace !
+Emblemas
+¿Quieres editar esta casa?
+Texto personal
+Personal Video
+Cambiar el texto de su hogar , al escribir un texto de hasta 100 caracteres , se puede poner lo que quiera , a menos que los códigos HTML !
+Ponga Backdrop uima para su hogar !
+Coloque un color de fondo en su casa!
+Cargue un video en su casa ( Yotube , o cualquier URL)
+Bienvenido a la tienda , Aquí se puede comprar VIP Intercambio de Referidos y hacer muchas cosas
+comprar
+En las tiendas se puede comprar insignias y hacer muchas cosas interesantes y goce el hacer compras y comprar algo
+Código de etiqueta
+Dólares
+editar
+borrar

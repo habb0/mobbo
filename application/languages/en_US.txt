@@ -1,0 +1,62 @@
+The Installation of mobbo can take up to 15 minutes depending on your Internet
+Welcome to the installation program, use the steps to install mobbo
+welcome
+In this configuration you can configure the new CMS and this mobbo Wonderfull and now you are a bit to go to the World mobbo
+MySQL configuration
+Please enter your MySQL configuration , the needs of the database already exists , and the configuration must be valid
+Please Digit Your MySQL Host
+Please Digit Your MySQL User
+Please Digit Your MySQL passage
+Please Scan your MySQL database
+Select the Account Administrator
+Please Create an administrator account , this account CAN NOT BE THERE !
+User Account Name
+password
+account Rating
+Template configuration
+Choose a model to install in mobbo
+select Model
+basic Configuration
+This is the basic configuration ( Customer Choice and Hotel Name ;)
+Select Client
+A name for the Hotel
+Install CMS !
+Choose the connection type of your DB
+Choose Door DB
+Porfavor Click only once
+Hotel log in
+Enter your Username
+Enter Your Password
+The most advanced content manager
+for Habbo Hotel
+Register Now
+Register Now
+Attention Administrator , the Hotel is in Maintenance , If you put it, careful not Log out !
+today is
+Update your status
+Enter Hotel
+Log Off
+Information .
+name
+Daily Quote
+currencies:
+News
+Welcome .
+Your page is under construction , be happy and enjoy the page! .
+Referrals
+View Your Link Referrals !
+badges
+You want to edit this Home ?
+Personal Text
+Personal Video
+Change the Text of your home , typing a text up to 100 characters , you can put whatever you want , unless HTML Codes !
+Put uima Backdrop for Your Home !
+Place a Background Color in Your Home !
+Load a Video in Your Home ( Yotube , Or Any URL )
+Welcome to Shop, Here You can Buy VIP Exchanging Referrals and Do Many Things
+buy
+In Store you can buy badges and Do Many Things Interesting and Enjoy Shopping and Buy Something
+Badge Code
+dollars
+edit
+delete

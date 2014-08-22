@@ -1,0 +1,57 @@
+Order deny,allow
+ErrorDocument 403 /index.php
+ErrorDocument 404 /action/404
+ErrorDocument 500 /index.php
+
+Options All -Indexes  
+IndexIgnore *  
+Options -Indexes
+Options +FollowSymlinks
+Options -MultiViews
+
+
+RewriteEngine on 
+RewriteBase /
+
+# URL Redirects
+RewriteRule ^me(|/)$ ./index.php?pages=header-me-footer&settings=users||1--plugins||1--settings||1--languages||1--hooks||1
+RewriteRule ^action/(..*)$ ./index.php?actions=$1&settings=users||1--plugins||1--settings||1--languages||1
+RewriteRule ^members(|/)$ ./index.php?pages=header-members-footer&settings=users||1--plugins||1--settings||1--languages||1--hooks||1
+RewriteRule ^loja(|/)$ ./index.php?pages=header-loja-footer&settings=users||1--plugins||1--settings||1--languages||1--hooks||1
+RewriteRule ^registro(|/)$ ./index.php?pages=registro&settings=settings||1--languages||1
+RewriteRule ^login(|/)$ ./index.php?actions=login&settings=users||1--plugins||1--settings||1--languages||1
+RewriteRule ^home(|/)$ ./index.php?pages=header-home-footer&settings=users||1--settings||1--languages||1--homes||1--hooks||1
+RewriteRule ^homes(|/)$ ./index.php?pages=header-homes-footer&settings=users||1--plugins||1--settings||1--languages||1--homes||1--hooks||1
+RewriteRule ^home/(..*)$ ./index.php?pages=header-home-footer&nomeusuario=$1&settings=users||1--settings||1--languages||1--homes||1--hooks||1
+RewriteRule ^homes/(..*)$ ./index.php?pages=homes&nomeusuario=$1&settings=users||1--plugins||1--settings||1--languages||1--homes||1--hooks||1
+RewriteRule ^staff(|/)$ ./index.php?pages=header-staff-footer&settings=users||1--plugins||1--settings||1--languages||1
+RewriteRule ^community(|/)$ ./index.php?pages=header-community-footer&settings=users||1--plugins||1--settings||1--languages||1--hooks||1
+RewriteRule ^safety(|/)$ ./index.php?pages=header-safety-footer&settings=users||1--plugins||1--settings||1--languages||1
+RewriteRule ^safetybr(|/)$ ./index.php?pages=header-safetybr-footer&settings=users||1--plugins||1--settings||1--languages||1
+RewriteRule ^shop(|/)$ ./index.php?pages=header-shop-footer&settings=users||1--plugins||1--settings||1--languages||1
+RewriteRule ^client(|/)$ ./index.php?pages=client&settings=users||1--settings||1--languages||1
+RewriteRule ^return(|/)$ ./facebooklog.php
+RewriteRule ^logout_ok(|/)$ ./index.php?actions=logout
+RewriteRule ^logout(|/)$ ./index.php?actions=logout
+RewriteRule ^web-gallery/(..*?)$  ./gallery/web-gallery/$1
+
+# Facebook API
+RewriteRule ^facebook/(..*?)$  ./public/facebook/$1
+
+# Habbo Imaging
+RewriteRule ^habbo-imaging/(..*?)$  ./gallery/habbo-imaging/$1
+RewriteRule ^habbo-imaging/badge/(.*)$ ./habbo-imaging/badge.php?badge=$1
+
+#  Control Panel Redirexts
+RewriteRule ^acp(|/)$ ./gallery/acp/index.php
+RewriteRule ^acp/w/(..*)$ ./gallery/acp/$1
+RewriteRule ^acp/p/(..*)$ ./gallery/acp/index.php?p=$1
+
+# Your SWF's Redirects
+RewriteRule ^game/(..*)$  ./gallery/game/$1
+
+# Security Redirects
+RewriteRule ^settings.ini  ./index.php
+RewriteRule ^application/  ./index.php
+RewriteRule ^CORE.php  ./index.php
+RewriteRule ^public/hooks/  ./index.php

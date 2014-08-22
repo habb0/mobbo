@@ -1,0 +1,62 @@
+A Instalacao da Mobbo Pode Demorar Ate 15 Minutos dependendo da sua Internet
+Bem-vindo ao programa de instalacao, use as etapas para instalar mobbo
+bem-vindo
+Nesta configuracao voce pode configurar o novo mobbo CMS e esta e Wonderfull, agora voce e um pouco para ir para o mobbo Mundo
+Configuracao MySQL
+Por favor coloque o seu Configuracao MySQL, as necessidades de banco de dados ja existe, e a configuracao deve ser valido
+Por favor Digit Seu MySQL Anfitriao
+Por favor Digit Seu MySQL Usuario
+Por favor Digit Seu MySQL passagem
+Por favor Digit seu banco de dados MySQL
+Administrador de Conta Select
+Por favor Criar uma conta de administrador, essa conta NAO PODE SER EXISTE!
+Conta Nome de Usuario
+Senha
+Conta Ranking
+Configuracao Template
+Escolha um modelo para instalar no mobbo
+Selecionar modelo
+Configuracao basica
+Esta e a configuracao basica (Escolha do Cliente e um Nome do Hotel;)
+Seleccione Cliente
+De um nome para o Hotel
+Instale o CMS!
+Escolha o Tipo de Conexao da sua DB
+Escolha a Porta da DB
+Porfavor Clique somente uma Vez
+Logar no Hotel
+Digite seu Username
+Digite sua Senha
+O mais avançado gerenciador de conteudo
+para Habbo Hotel
+Registre-se Agora
+Registrar Agora
+Atenção Administrador, o Hotel está em Manutenção, Caso você colocou, Cuidado para Não Deslogar!
+Hoje é
+atualize seu status
+Entre no Hotel
+Sair da Conta
+Informacoes.
+Nome
+Frase Diária
+moedas:
+Noticias
+Bem Vindo.
+Esta é sua página, está em construção, seja feliz e aproveite a página !.
+Referidos
+Veja o Seu Link de Referidos !
+Emblemas
+Você deseja editar esta Home ?
+Texto Pessoal
+Vídeo Pessoal
+Altere o Texto da sua Home, digitando um Texto de até 100 Caracteres, Você pode colocar o Que Quiser, menos Códigos HTML!
+Coloque uima Imagem de Fundo para a Sua Home!
+Coloque uma Cor de Fundo na Sua Home!
+Coloque um Vídeo na Sua Home (Yotube, Ou Qualquer URL)
+Bem Vindo a Loja, Aqui Você poderá Comprar VIP, Trocar Referidos e Fazer Muitas Coisas
+Comprar
+Na Loja você poderá comprar Emblemas e Fazer Muitas Coisas e Compras Interessantes Aproveite e Compre Algo
+Codigo do emblema
+Dólares
+Editar
+Excluir
