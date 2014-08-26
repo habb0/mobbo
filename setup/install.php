@@ -212,7 +212,7 @@ if (!file_exists('trava.php'))
 
                                         Templates::Download('http://bi0s.hostingsiteforfree.com/uploads/bi0s/mobbonovo.zip');
                                         Templates::Install('mobbonovo');
-                                        Templates::Active('mobbo');
+                                        Templates::Active('mobbonovo');
 
                                         $fileArray = array(
                                             "../GALLERY.zip",

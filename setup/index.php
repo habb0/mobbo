@@ -21,7 +21,10 @@ if (!file_exists(SERVERE . '/setup/trava.php'))
         fwrite($log, $mensagem3);
         fwrite($log, $mensagem5);
         $_SESSION['langer'] = 12;
+		header("location: setup");
+		die();
         }
+		
     if (!isset($_SESSION['langer']))
         {
         ?>
@@ -248,5 +251,6 @@ if (!file_exists(SERVERE . '/setup/trava.php'))
             </body>
         </html>
         <?php
+		session_destroy();
         }
     }?>

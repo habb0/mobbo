@@ -38,6 +38,14 @@ RewriteRule ^web-gallery/(..*?)$  ./gallery/web-gallery/$1
 # Facebook API
 RewriteRule ^facebook/(..*?)$  ./public/facebook/$1
 
+# Photo API
+
+RewriteRule ^user/(..*)$ ./photo/okay.php?get=user&user=$1
+RewriteRule ^carding/(..*)$ ./photo/images/cards/$1.png
+RewriteRule ^cards/selfie/entries/(..*)$ ./photo/okay.php?get=card&background=$1
+RewriteRule ^cards/selfie(|/)$ ./photo/scripts/in.html
+
+
 # Habbo Imaging
 RewriteRule ^habbo-imaging/(..*?)$  ./gallery/habbo-imaging/$1
 RewriteRule ^habbo-imaging/badge/(.*)$ ./habbo-imaging/badge.php?badge=$1

@@ -273,17 +273,14 @@ PAGE;
                 break;
             case 'editarfundo':
                 $fundo    = htmlentities($_POST['fundo']);
-                $fundoe   = htmlentities($_POST['fundoe']);
-				if(strpos('http://', $fundo) OR strpos('www.', $fundo))
+				$words    = array('http://', 'www.');
+				if(strpos($fundo, $words[0]) !== false OR strpos($fundo, $words[1]) !== false)
 				$fundo = 'url(' . $fundo . ')';
-				if(strpos('http://', $fundoe) OR strpos('www.', $fundoe))
-				$fundoe = 'url(' . $fundoe . ')';
                 $username = htmlentities($_POST['username']);
                 $user     = mobbo::users_info('username');
                 if ($username == $user)
                     {
                     Transaction::query("UPDATE users SET fundom = '" . $fundo . "' WHERE username = '" . $username . "'");
-                    Transaction::query("UPDATE users SET fundoe = '" . $fundoe . "' WHERE username = '" . $username . "'");
                     }
 
                 break;
