@@ -128,7 +128,7 @@ if (isset($_SESSION['id']))
             $logged_in = true;
             $name      = ( mobbo::HoloText($myrow['username']) != 0 ) ? mobbo::HoloText($myrow['username']) : "Guest";
             $id        = ( mobbo::HoloText($myrow['id']) != 0 ) ? mobbo::HoloText($myrow['id']) : 0;
-            $fb_id     = ( mobbo::HoloText($myrow['fb_id']) != 0 ) ? mobbo::HoloText($myrow['fb_id']) : 0;
+            @$fb_id     = ( mobbo::HoloText($myrow['fb_id']) != 0 ) ? mobbo::HoloText($myrow['fb_id']) : 0;
             $my_id     = ( mobbo::HoloText($myrow['id']) != 0 ) ? mobbo::HoloText($myrow['id']) : 0;
             $motto     = ( mobbo::HoloText($myrow['motto']) != 0 ) ? mobbo::HoloText($myrow['moyyo']) : "Nothing";
             $mail      = ( mobbo::HoloText($myrow['mail']) != 0 ) ? mobbo::HoloText($myrow['mail']) : "guest@guest.com";

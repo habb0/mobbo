@@ -27,9 +27,9 @@ class mobbo
             function mobbo_settings($var)
         {
         $var2   = Security::injection($var);
-        $sql    = Transaction::query("SELECT value FROM `mobbo_settings` WHERE `variable` LIKE '$var2'");
+        $sql    = Transaction::query("SELECT valuer FROM `mobbo_settings` WHERE `variabler` LIKE '$var2'");
         $return = Transaction::fetch($sql);
-        return $return['value'];
+        return $return['valuer'];
         }
 
     public static

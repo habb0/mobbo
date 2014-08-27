@@ -31,17 +31,17 @@ $config         = parse_ini_file('settings.ini');
 $app_id         = $config['app_id'];
 $app_secret     = $config['app_secret'];
 $site_url       = $config['site_url'];
-$host           = $config['host'];
-$host_user      = $config['host_user'];
-$host_pass      = $config['host_pass'];
-$host_db        = $config['host_db'];
+@$host           = $config['host'];
+@$host_user      = $config['host_user'];
+@$host_pass      = $config['host_pass'];
+@$host_db        = $config['host_db'];
 $debug_mode     = $config['debug_mode'];
 $logType        = $config['logtype'];
-$host_type      = $config['host_type'];
-$host_port      = $config['host_port'];
+@$host_type      = $config['host_type'];
+@$host_port      = $config['host_port'];
 $backup_enabled = $config['backup_enabled'];
 $backup_time    = $config['backup_time'];
-$language       = $config['language'];
+@$language       = $config['language'];
 
 /* defines the app paths with "define" */
 

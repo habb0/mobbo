@@ -28,20 +28,20 @@ class Parsering
         $result = Transaction::query("SELECT * FROM mobbo_settings");
         while (($row    = Transaction::fetch($result)))
             {
-            $name         = $row['variable'];
-            $code         = $row['value'];
+            $name         = $row['variabler'];
+            $code         = $row['valuer'];
             $types[$name] = $code;
             }
         if (count($types) > 0)
             {
             foreach ($types as $tag => $data)
                 {
-                $query2 = Transaction::query("SELECT * FROM mobbo_settings WHERE variable = '$tag' LIMIT 1");
+                $query2 = Transaction::query("SELECT * FROM mobbo_settings WHERE variabler = '$tag' LIMIT 1");
                 $string = '[[' . $tag . ']]';
                 if (strpos($this->output, $string))
                     {
                     $PluginCode   = Transaction::fetch($query2);
-                    $text         = $PluginCode['value'];
+                    $text         = $PluginCode['valuer'];
                     $this->output = str_replace('[[' . $tag . ']]', $text, $this->output);
                     }
                 }

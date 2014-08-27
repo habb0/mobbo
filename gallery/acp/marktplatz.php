@@ -18,7 +18,7 @@ if ($user_rank > 6)
 
     $page = Security::textFilter($_GET['page']);
 
-    $posts = Transaction::evaluate("SELECT COUNT(*) FROM mobbo_marktplatz");
+    $posts = Transaction::evaluate("SELECT COUNT(*) FROM mobbo_shop");
     $pages = ceil(($posts + 0) / 50);
 
     if ($page > $pages || $page < 1)
@@ -39,11 +39,11 @@ if ($user_rank > 6)
     if ($do == "delete" && is_numeric($key))
         {
 
-        $check = Transaction::query("SELECT id FROM mobbo_marktplatz WHERE id = '" . $key . "' LIMIT 1");
+        $check = Transaction::query("SELECT id FROM mobbo_shop WHERE id = '" . $key . "' LIMIT 1");
 
         if (Transaction::num_rows($check) > 0)
             {
-            Transaction::query("DELETE FROM mobbo_marktplatz WHERE id = '" . $key . "' LIMIT 1");
+            Transaction::query("DELETE FROM mobbo_shop WHERE id = '" . $key . "' LIMIT 1");
             $msg = "<div class='rounded rounded-green'><center>Emblema excluido com sucesso <img src=\"./w/images/check.gif\"></center></div>";
             }
         else
@@ -54,7 +54,7 @@ if ($user_rank > 6)
     elseif ($do == "edit" && is_numeric($key))
         {
 
-        $check = Transaction::query("SELECT * FROM mobbo_marktplatz WHERE id = '" . $key . "' LIMIT 1");
+        $check = Transaction::query("SELECT * FROM mobbo_shop WHERE id = '" . $key . "' LIMIT 1");
 
         if (Transaction::num_rows($check) > 0)
             {
@@ -69,12 +69,12 @@ if ($user_rank > 6)
     elseif ($do == "save" && is_numeric($key))
         {
 
-        $check = Transaction::query("SELECT * FROM mobbo_marktplatz WHERE id = '" . $key . "' LIMIT 1");
+        $check = Transaction::query("SELECT * FROM mobbo_shop WHERE id = '" . $key . "' LIMIT 1");
 
         if (Transaction::num_rows($check) > 0)
             {
 
-            Transaction::query("UPDATE mobbo_marktplatz SET name = '" . $_POST['name'] . "', image = '" . $_POST['image'] . "', credits = '" . $_POST['credits'] . "' WHERE id = '" . $key . "' LIMIT 1");
+            Transaction::query("UPDATE mobbo_shop SET name = '" . $_POST['name'] . "', image = '" . $_POST['image'] . "', credits = '" . $_POST['credits'] . "' WHERE id = '" . $key . "' LIMIT 1");
 
             $msg         = "<div class='rounded rounded-green'><center>Informaes atualizadas corretamente. <img src=\"./w/images/check.gif\"></center></div>";
             $editor_mode = false;
@@ -92,7 +92,7 @@ if ($user_rank > 6)
         if ($_POST['submit'])
             {
 
-            Transaction::query("INSERT INTO mobbo_marktplatz (image,name,credits) VALUES ('" . $_POST['image'] . "','" . $_POST['name'] . "','" . $_POST['credits'] . "')");
+            Transaction::query("INSERT INTO mobbo_shop (image,name,credits) VALUES ('" . $_POST['image'] . "','" . $_POST['name'] . "','" . $_POST['credits'] . "')");
             $msg         = "<div class='rounded rounded-green'><center>Emblema adicionado corretamente! <img src=\"./w/images/check.gif\"></center></div>";
             $editor_mode = false;
             }
@@ -150,7 +150,7 @@ if ($user_rank > 6)
                         $query_min = 0;
                         }
 
-                    $get_marktplatz = Transaction::query("SELECT * FROM mobbo_marktplatz ORDER BY id DESC LIMIT " . $query_min . ", 50");
+                    $get_marktplatz = Transaction::query("SELECT * FROM mobbo_shop ORDER BY id DESC LIMIT " . $query_min . ", 50");
                     while ($row            = Transaction::fetch($get_marktplatz))
                         {
                         ?>

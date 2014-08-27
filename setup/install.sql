@@ -82,30 +82,26 @@ CREATE TABLE IF NOT EXISTS `mobbo_news` (
   `longstory` text COLLATE latin1_general_ci,
   `published` int(10) NOT NULL DEFAULT '0',
   `image` varchar(255) COLLATE latin1_general_ci DEFAULT '/Public/Images/news/TS_Web60.png',
-  `campaign` int(1) NOT NULL DEFAULT '0',
-  `campaignimg` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `author` int(6) NOT NULL DEFAULT '1',
-  `super_fader_image` varchar(225) CHARACTER SET latin1 NOT NULL DEFAULT '/Public/Images/news/v2/topstory_security.png',
-  `super_fader` int(1) NOT NULL,
   `mini` varchar(255) COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
-INSERT INTO `mobbo_news` (`id`, `title`, `shortstory`, `longstory`, `published`, `image`, `campaign`, `campaignimg`, `author`, `super_fader_image`, `super_fader`, `mini`) VALUES
-(1, 'mobbo Instalada', 'Mobbo Instalada com Sucesso', 'A Mobbo Foi Instalada com Sucesso! Aproveite!', 1382883244, '#2ba6cb', 0, '0', 0, '#2ba6cb', 1, '')
+INSERT INTO `mobbo_news` (`id`, `title`, `shortstory`, `longstory`, `published`, `image`, `author`, `mini`) VALUES
+(1, 'mobbo Instalada', 'Mobbo Instalada com Sucesso', 'A Mobbo Foi Instalada com Sucesso! Aproveite!', 1, '#2ba6cb', 'Admin', '');
 CREATE TABLE IF NOT EXISTS `mobbo_settings` (
-  `variable` varchar(80) NOT NULL,
-  `value` text NOT NULL,
+  `variabler` varchar(80) NOT NULL,
+  `valuer` text NOT NULL,
   `description` text,
   `example` text,
-  PRIMARY KEY (`variable`)
+  PRIMARY KEY (`variabler`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-INSERT INTO `mobbo_settings` (`variable`, `value`, `description`, `example`) VALUES
+INSERT INTO `mobbo_settings` (`variabler`, `valuer`, `description`, `example`) VALUES
 ('maintenance', '0', 'Manutenção', '0/1'),
 ('maintenance_text', 'Estamos Atualizando o Nosso Sistema..', 'Texto Manutenção', 'Estamos Atualizando o Nosso Sistema..'),
 ('hotel_mail', 'admin@m0va.me', 'E-mail do Criador', 'info@tuhotel.com'),
 ('hotel_name', 'mobbo', 'Nome do Hotel', 'mobbo'),
 ('hotel_url', 'http://localhost/', 'URL do Hotel', 'http://localhost/'),
-('timezone', 'Europe/Madrid', 'Default Timezone', 'America/Los Angeles')
+('timezone', 'Europe/Madrid', 'Default Timezone', 'America/Los Angeles');
 CREATE TABLE IF NOT EXISTS `ranks` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
