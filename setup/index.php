@@ -20,59 +20,9 @@ if (!file_exists(SERVERE . '/setup/trava.php'))
         fwrite($log, $mensagem);
         fwrite($log, $mensagem3);
         fwrite($log, $mensagem5);
-        $_SESSION['langer'] = 12;
-		header("location: setup");
-		die();
-        }
-		
-    if (!isset($_SESSION['langer']))
-        {
-        ?>
-        <html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" data-useragent="Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>mobbo - setup</title>
-
-                <meta name="author" content="m0vame.com.br - bi0s">
-                <meta name="copyright" content="PowerPíxel Fórum (c) 2014">
-                <link rel="stylesheet" href="./gallery/css/foundation.css" />
-                <link rel="stylesheet" href="./gallery/css/cms.css" />
-                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-                <link type="text/css" rel="stylesheet" href="./gallery/css/marketing.css">
-            </head>
-            <body>
-                <div class="row">
-                    <form method="post">
-                        <div class="large-12 columns">
-                            <br><h4>Select your Language</h4><br> 
-                            <p> Select the Language of the CMS (This Language goes the default of the CMS)</p>
-                            <select name="language" class="dateselector">
-                                <option value="">Select The Language</option>
-                                <option value="pt_BR">Portuguese</option>
-                                <option value="en_US">English</option>
-                                <option value="es_ES">Spanish</option>
-                            </select>
-                            <input type="submit" class="small button success" value="Select"/>
-                        </div>
-                    </form>
-                </div>
-
-                <script src="./gallery/web-gallery/js/foundation.min.js"></script>
-                <script src="./gallery/web-gallery/js/foundation/foundation.joyride.js"></script>
-                <script src="./gallery/web-gallery/js/foundation/foundation.clearing.js"></script>
-                <script src="./gallery/web-gallery/js/vendor/jquery.cookie.js"></script>
-                <script>
-                    $ (document).foundation ();
-                    $ (document).foundation ('joyride', 'start');</script>
-            </body>
-        </html>		
-        <?php
-        }
-    else
-        {
-
         // start the translation system
 
+		$language = $_POST['language'];
         Translation::setLanguage($language);
         Security::ddosprotect();
         $hosting = 'http://' . $_SERVER['HTTP_HOST'];
@@ -82,8 +32,7 @@ if (!file_exists(SERVERE . '/setup/trava.php'))
                 <meta charset="utf-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>mobbo - setup</title>
-                <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com">
-                <meta name="copyright" content="ZURB, inc. Copyright (c) 2013">
+				<link rel="icon" href="../favicon.ico" type="image/x-icon">
                 <link rel="stylesheet" href="./gallery/css/foundation.css" />
                 <link rel="stylesheet" href="./gallery/css/cms.css" />
                 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -250,7 +199,47 @@ if (!file_exists(SERVERE . '/setup/trava.php'))
                 </script>
             </body>
         </html>
+		<?php
+        }	
+        else
+        {
+        ?>
+        <html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" data-useragent="Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>mobbo - setup</title>
+
+                <meta name="author" content="m0vame.com.br - bi0s">
+                <meta name="copyright" content="PowerPíxel Fórum (c) 2014">
+                <link rel="stylesheet" href="./gallery/css/foundation.css" />
+                <link rel="stylesheet" href="./gallery/css/cms.css" />
+                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+                <link type="text/css" rel="stylesheet" href="./gallery/css/marketing.css">
+            </head>
+            <body>
+                <div class="row">
+                    <form method="post">
+                        <div class="large-12 columns">
+                            <br><h4>Select your Language</h4><br> 
+                            <p> Select the Language of the CMS (This Language goes the default of the CMS)</p>
+                            <select name="language" class="dateselector">
+                                <option value="">Select The Language</option>
+                                <option value="pt_BR">Portuguese</option>
+                                <option value="en_US">English</option>
+                                <option value="es_ES">Spanish</option>
+                            </select>
+                            <input type="submit" class="small button success" value="Select"/>
+                        </div>
+                    </form>
+                </div>
+
+                <script src="./gallery/web-gallery/js/foundation.min.js"></script>
+                <script src="./gallery/web-gallery/js/vendor/jquery.cookie.js"></script>
+                <script>
+                    $ (document).foundation ();
+                    $ (document).foundation ('joyride', 'start');</script>
+            </body>
+        </html>		
         <?php
-		session_destroy();
         }
     }?>

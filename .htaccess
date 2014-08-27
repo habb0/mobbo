@@ -42,7 +42,9 @@ RewriteRule ^facebook/(..*?)$  ./public/facebook/$1
 
 RewriteRule ^user/(..*)$ ./photo/okay.php?get=user&user=$1
 RewriteRule ^carding/(..*)$ ./photo/images/cards/$1.png
+RewriteRule ^carding2/(..*)$ ./photo/images/cards/$1
 RewriteRule ^cards/selfie/entries/(..*)$ ./photo/okay.php?get=card&background=$1
+RewriteRule ^postcards/selfie/(..*)$ ./photo/okay.php?get=selfie&bg=$1
 RewriteRule ^cards/selfie(|/)$ ./photo/scripts/in.html
 
 
@@ -60,6 +62,7 @@ RewriteRule ^game/(..*)$  ./gallery/game/$1
 
 # Security Redirects
 RewriteRule ^settings.ini  ./index.php
+RewriteRule ^setup/install.sql  ./index.php
 RewriteRule ^application/  ./index.php
 RewriteRule ^CORE.php  ./index.php
 RewriteRule ^public/hooks/  ./index.php
