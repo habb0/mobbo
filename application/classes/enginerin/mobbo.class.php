@@ -14,11 +14,22 @@ class mobbo
     public static
             function users_info($get, $ido = 0)
         {
-        if ($ido == 0)
-            $id2    = Security::injection($_SESSION['id']);
-        else
+        if (empty($ido))
+        {
+		$id2    = Security::injection($_SESSION['id']);
+		$wet    = 'id';
+        }
+		else if(is_numeric($ido))
+		{
             $id2    = Security::injection($ido);
-        $sql    = Transaction::query("SELECT * FROM `users` WHERE id = '$id2' LIMIT 1");
+			$wet    = 'id';
+		}
+		else
+		{
+		    $id2    = Security::injection($ido);
+			$wet    = 'username';
+		}
+        $sql    = Transaction::query("SELECT * FROM `users` WHERE $wet = '$id2' LIMIT 1");
         $return = Transaction::fetch($sql);
         return $return[$get];
         }

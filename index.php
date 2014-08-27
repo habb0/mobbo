@@ -137,7 +137,6 @@ if (isset($_SESSION['id']))
             $pixels    = ( mobbo::HoloText($myrow['activity_points']) != 0 ) ? mobbo::HoloText($myrow['activity_points']) : 0;
             $look      = ( mobbo::HoloText($myrow['look']) != 0 ) ? mobbo::HoloText($myrow['look']) : "Guest";
             $online    = ( mobbo::HoloText($myrow['online']) != 0 ) ? mobbo::HoloText($myrow['online']) : "Guest";
-            $geter     = mobbo::users_info('username');
             $user_rank = $rank;
             }
         else

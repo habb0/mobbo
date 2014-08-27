@@ -265,9 +265,13 @@ PAGE;
                     $fundo    = htmlentities(addslashes($_POST['fundo']));
                     $cores    = htmlentities($_POST['cor']);
                     $video    = htmlentities($_POST['video']);
+					if(!empty($texto))
                     Transaction::query("UPDATE users_homes SET texto = '" . $texto . "' WHERE username = '" . $username . "'");
+					if(!empty($video))
                     Transaction::query("UPDATE users_homes SET video = '" . $video . "' WHERE username = '" . $username . "'");
+					if(!empty($cores))
                     Transaction::query("UPDATE users_homes SET cores = '" . $cores . "' WHERE username = '" . $username . "'");
+					if(!empty($fundo))
                     Transaction::query("UPDATE users_homes SET fundo = '" . $fundo . "' WHERE username = '" . $username . "'");
                     }
                 break;

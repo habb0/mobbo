@@ -23,7 +23,7 @@ class Pages extends Parsering
     private
             $path;
     protected
-            $geton = Array();
+            $geton;
 
     private
             function run()
@@ -40,7 +40,7 @@ class Pages extends Parsering
                 }
             $act         = isset($_GET['actions']) ? htmlspecialchars($_GET['actions']) : 1;
             $pae         = isset($_GET['pages']) ? htmlspecialchars($_GET['pages']) : 'index';
-            $this->geton = $_GET;
+            $this->geton = $_GET['nomeusuario'];
 
             if ($act != 1)
                 {

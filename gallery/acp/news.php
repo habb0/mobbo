@@ -105,7 +105,7 @@ if ($user_rank > 5)
         if ($_POST['submit'])
             {
 
-            Transaction::query("INSERT INTO mobbo_news (title,longstory,shortstory,published,image,campaign,campaignimg,author) VALUES ('" . $_POST['title'] . "','" . $_POST['shortstory'] . "','" . $_POST['longstory'] . "','" . time() . "','" . $_POST['image'] . "','0','0','" . $_POST['author'] . "')");
+            Transaction::query("INSERT INTO mobbo_news (title,longstory,shortstory,published,image,author) VALUES ('" . $_POST['title'] . "','" . $_POST['shortstory'] . "','" . $_POST['longstory'] . "','" . time() . "','" . $_POST['image'] . "','" . $_POST['author'] . "')");
             $msg         = "<div class='rounded rounded-green'><center>A notcia foi publicada!</center></div>";
             $editor_mode = false;
             }

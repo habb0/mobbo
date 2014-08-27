@@ -97,7 +97,7 @@ class Parsering
 
     function parseHomesUsers()
         {
-        $id    = htmlentities($this->geton['nomeusuario']);
+        $id    = htmlentities($this->geton);
         $ide   = mobbo::users_info('id', $id);
         $query = Transaction::query("SELECT * FROM users WHERE id = '$ide' LIMIT 1");
         $row   = Transaction::fetch($query);
@@ -116,7 +116,7 @@ class Parsering
 
     function parseHomes()
         {
-        $id    = htmlentities($this->geton['nomeusuario']);
+        $id    = htmlentities($this->geton);
         $ide   = mobbo::users_info('username', $id);
         $query = Transaction::query("SELECT * FROM users_homes WHERE username = '$ide' LIMIT 1");
         $row   = Transaction::fetch($query);
