@@ -18,10 +18,10 @@ DROP TABLE IF EXISTS mobbo_backups;
 DROP TABLE IF EXISTS `arrowchat`;
 DROP TABLE IF EXISTS `comments`;
 DROP TABLE IF EXISTS `posts`;
-DROP TABLE IF EXISTS `mobbo_marktplatzvip`;
+DROP TABLE IF EXISTS `mobbo_shop`;
 DROP TABLE IF EXISTS `users_referidos`;
 DROP TABLE IF EXISTS `users_homes`;
-CREATE TABLE IF NOT EXISTS `mobbo_marktplatzvip` (
+CREATE TABLE IF NOT EXISTS `mobbo_shop` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
@@ -101,6 +101,7 @@ INSERT INTO `mobbo_settings` (`variabler`, `valuer`, `description`, `example`) V
 ('hotel_mail', 'admin@m0va.me', 'E-mail do Criador', 'info@tuhotel.com'),
 ('hotel_name', 'mobbo', 'Nome do Hotel', 'mobbo'),
 ('hotel_url', 'http://localhost/', 'URL do Hotel', 'http://localhost/'),
+('hotel_ticket', 'users;auth_ticket', 'Table do Ticket (Tabela, Coluna)', 'users;auth_ticket'),
 ('timezone', 'Europe/Madrid', 'Default Timezone', 'America/Los Angeles');
 CREATE TABLE IF NOT EXISTS `ranks` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
