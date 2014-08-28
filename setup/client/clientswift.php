@@ -1,19 +1,28 @@
 <?php
+$table    = 0;
+$quefa    = 0;
+$column   = 0;
 $myrealip = $_SERVER['REMOTE_ADDR'];
 $id       = htmlentities($_SESSION['id']);
-$SQL      = Transaction::query("SELECT auth_ticket FROM users WHERE id = '" . $id . "'");
+$quefa    = mobbo::mobbo_settings('hotel_ticket');
+$quefa    = explode(';', $quefa);
+$table    = $quefa[0];
+$colum    = $quefa[1];
+$SQL      = Transaction::query("SELECT $colum FROM $table WHERE id = '" . $id . "'");
 
-echo mysql_error();
+
+
 $N = Transaction::num_rows($SQL);
 if ($N == 0)
     {
-    Transaction::query("UPDATE `users` SET `auth_ticket` = '" . Security::GenerateTicket() . "', `ip_last` = '" . $myrealip . "' WHERE id = '" . $id . "'") or die(mysql_error());
+    Transaction::query("UPDATE $table SET $colum = '" . Security::GenerateTicket() . "' WHERE id = '" . $id . "'");
     }
 else
     {
-    Transaction::query("UPDATE `users` SET `auth_ticket` = '" . Security::GenerateTicket() . "', `ip_last` = '" . $myrealip . "' WHERE id = '" . $id . "'") or die(mysql_error());
-    $ticketsql = Transaction::query("SELECT auth_ticket FROM users WHERE id = '" . $id . "'") or die(mysql_error());
+    Transaction::query("UPDATE $table SET $colum = '" . Security::GenerateTicket() . "' WHERE id = '" . $id . "'");
+    $ticketsql = Transaction::query("SELECT $colum FROM $table WHERE id = '" . $id . "'");
     $ticketrow = Transaction::fetch($ticketsql);
+	$ticket    = $ticketrow[$colum];
     }
 
 
@@ -53,7 +62,7 @@ $path = "http://localhost/";
                     "productdata.load.url": "http://localhost/game/productdata.txt",
                     "furnidata.load.url": "http://localhost/game/furnidata.txt",
                     "use.sso.ticket": "1",
-                    "sso.ticket": "<?php echo $ticketrow['auth_ticket']; ?>",
+                    "sso.ticket": "<?php echo $ticket; ?>",
                     "processlog.enabled": "0",
                     "flash.client.url": BaseUrl,
                     "flash.client.origin": "popup"
