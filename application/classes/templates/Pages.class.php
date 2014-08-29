@@ -140,8 +140,8 @@ class Pages extends Parsering
             $page = $this->name;
             }
         $ip = $_SERVER['REMOTE_ADDR'];
-        Transaction::log("The page $page has been accessed by ip $ip", 'logs');
-        Transaction::destruir();
+		$messaging = new Message;
+        $messaging->log("The page $page has been accessed by ip $ip", 'logs');
         }
 
     public

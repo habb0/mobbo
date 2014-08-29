@@ -96,10 +96,10 @@ include('subheader.php');
 
 
     }
-	#fudeugeral {
-	display:none;
-	visibility:hidden;
-	}
+    #fudeugeral {
+        display:none;
+        visibility:hidden;
+    }
 </style>
 
 

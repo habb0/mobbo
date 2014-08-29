@@ -96,13 +96,13 @@ class Security
     public static
             function textFilterHK($string = '')
         {
-        return Security::injection(stripslashes(trim($string)));
+        return Security::injection(trim($string));
         }
 
     public static
             function textFilter($string = '')
         {
-        return Security::injection(stripslashes(trim(htmlspecialchars($string))));
+        return Security::injection(trim(htmlspecialchars($string)));
         }
 
     public static

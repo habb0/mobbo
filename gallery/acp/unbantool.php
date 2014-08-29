@@ -1,4 +1,10 @@
 <?php
+/* Security Proof */
+$included_files = 2345;
+$included_files = get_included_files();
+if (!in_array($_SERVER['DOCUMENT_ROOT'] . '\CORE.php', $included_files))
+    die();
+
 if ($user_rank > 5)
     {
 

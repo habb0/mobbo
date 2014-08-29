@@ -22,7 +22,7 @@ include_once('./CORE.php');
 
 /*
  *
- *  mobbo 5.5 - Habbo Environment
+ *  mobbo 6.0 - Habbo Environment
  *  start the habbo environment
  *
  */
@@ -46,14 +46,14 @@ if ($debug_mode)
 // start the translation system
 
 Translation::setLanguage($language);
-Security::ddosprotect();
+
 
 // the hotel settings rows
 
 $mobbo_name       = ( mobbo::mobbo_settings('hotel_name') != 0 ) ? mobbo::mobbo_settings('hotel_name') : 0;
 $mobbo_url        = ( mobbo::mobbo_settings('hotel_url') != 0 ) ? mobbo::mobbo_settings('hotel_url') : 0;
-$remote_ip        = $_SERVER['REMOTE_ADDR'];
-$maintenance      = ( mobbo::mobbo_settings('maintenance') != 0 ) ? mobbo::mobbo_settings('maintenace') : 0;
+$remote_ip        = Security::getUserIP();
+$maintenance      = ( mobbo::mobbo_settings('maintenance') != 0 ) ? mobbo::mobbo_settings('maintenance') : 0;
 $maintenance_text = ( mobbo::mobbo_settings('maintenance_text') != 0 ) ? mobbo::mobbo_settings('maintenace_text') : 0;
 $online_count     = ( mobbo::users_onlines() != 0 ) ? mobbo::users_onlines() : 0;
 
@@ -62,10 +62,14 @@ $online_count     = ( mobbo::users_onlines() != 0 ) ? mobbo::users_onlines() : 0
 $mobbo_settings = Transaction::query("SELECT * FROM mobbo_settings LIMIT 1");
 $config         = Transaction::fetch($mobbo_settings);
 $sitename       = $mobbo_name;
-$path           = 'http://' . mobbo::mobbo_settings('hotel_url');
+$path           = mobbo::mobbo_settings('hotel_url');
+if(strpos($path, 'http://') !== false)
+$path           = $path;
+else
+$path           = 'http://' . $path;
 $onlines        = $online_count;
 $shortname      = $mobbo_name;
-$adminpath      = $path . "/theallseeingeye/hotel/br/housekeeping";
+$adminpath      = $path . "/acp";
 $pagefile       = $_SERVER['PHP_SELF'];
 
 // check the date and start the dating rows
@@ -128,7 +132,7 @@ if (isset($_SESSION['id']))
             $logged_in = true;
             $name      = ( mobbo::HoloText($myrow['username']) != 0 ) ? mobbo::HoloText($myrow['username']) : "Guest";
             $id        = ( mobbo::HoloText($myrow['id']) != 0 ) ? mobbo::HoloText($myrow['id']) : 0;
-            @$fb_id     = ( mobbo::HoloText($myrow['fb_id']) != 0 ) ? mobbo::HoloText($myrow['fb_id']) : 0;
+            @$fb_id    = ( mobbo::HoloText($myrow['fb_id']) != 0 ) ? mobbo::HoloText($myrow['fb_id']) : 0;
             $my_id     = ( mobbo::HoloText($myrow['id']) != 0 ) ? mobbo::HoloText($myrow['id']) : 0;
             $motto     = ( mobbo::HoloText($myrow['motto']) != 0 ) ? mobbo::HoloText($myrow['moyyo']) : "Nothing";
             $mail      = ( mobbo::HoloText($myrow['mail']) != 0 ) ? mobbo::HoloText($myrow['mail']) : "guest@guest.com";

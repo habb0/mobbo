@@ -1,14 +1,19 @@
 <?php
 
+/* Security of blaming */
+$owner     = 'imnot';
+$user_rank = 0;
+$onlyowner = 1;
+
+/* include the CORE */
 include_once('../../CORE.php');
 
 /*
  *
- *  mobbo 5.5 - Habbo Environment
+ *  mobbo 6.0 - Habbo Environment
  *  start the habbo environment
  *
  */
-
 
 // mysql connect
 
@@ -146,25 +151,19 @@ else
     $logged_in = false;
     }
 
-// check the maintenance
 
-if (mobbo::mobbo_settings('maintenance') == 1)
+/* Is the Owner of the Hotel? */
+if ($onlyowner == 1)
     {
-    if (!isset($_SESSION ['id']) or mobbo::users_info('rank') < 5)
-        {
-        header("Location: /manutencao");
-        }
+    $query = Transaction::query("SELECT id FROM users ORDER BY id ASC LIMIT 1");
+    $fetch = Transaction::fetch($query);
+    if ($myrow['id'] == $fetch['id'])
+        $owner = 'yesiamtheowner';
+    else
+        $owner = 'imnot';
     }
-
-// say to the system what its the filename
-
-$pagina = $_SERVER['PHP_SELF'];
-
-/*
- *
- * End of the Habbo Environment Parsering
- *
- */
+else
+    $owner = 'yesiamtheowner';
 
 $user_rank = mobbo::users_info('rank');
 if ($user_rank > 3 && $logged_in or ! $logged_in)

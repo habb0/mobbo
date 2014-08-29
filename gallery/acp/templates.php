@@ -1,5 +1,11 @@
 <?php
-if ($user_rank >= 7 AND $myrow['owner'] == 1)
+/* Security Proof */
+$included_files = 2345;
+$included_files = get_included_files();
+if (!in_array($_SERVER['DOCUMENT_ROOT'] . '\CORE.php', $included_files))
+    die();
+
+if ($user_rank >= 7 AND $owner == 'yesiamtheowner')
     {
     if ($hkzone !== true)
         {
@@ -125,12 +131,12 @@ if ($user_rank >= 7 AND $myrow['owner'] == 1)
         </style>
         <p><strong><?php echo $msg; ?></strong></p><?php } ?>
 
-        <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        ?>
-        <?php
-        if ($editor_mode !== true)
+    <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         ?>
+    <?php
+    if ($editor_mode !== true)
         {
         ?>
-                <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    ?>
+        <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    ?>
 
         <form  onSubmit="MirrorUpdate ();" action='<?php echo $adminpath; ?>/p/templates&do=download' method='post' name='theAdminForm' id='theAdminForm'>
             <div class='tableborder'>
@@ -163,24 +169,24 @@ if ($user_rank >= 7 AND $myrow['owner'] == 1)
             $query_min = ($page * 50) - 50;
 
             if ($query_min < 0)
-            { // Page 1
-            $query_min = 0;
-            }
+                { // Page 1
+                $query_min = 0;
+                }
 
             $get_articles = Transaction::query("SELECT * FROM mobbo_templates ORDER BY id DESC LIMIT 100");
-            while ($row = Transaction::fetch ($get_articles))
-            {
-            ?>
+            while ($row          = Transaction::fetch($get_articles))
+                {
+                ?>
 
-            <tr>
-                <td class='tablerow1' align='center'><?php echo $row['id']; ?></td>
-                                <td class='tablerow2'><strong><?php echo Security::textFilterHK($row['name']); ?></strong><div class='desctext'><?php echo $row['longstory']; ?></div></td>
-                <td class='tablerow2' align='left'><?php echo $row['version']; ?></td>
-                <td class='tablerow2' align='left'><?php echo $row['creator']; ?></td>
-                <td class='tablerow2' align='left'><?php echo $row['active']; ?></td>
-                <td class='tablerow2' align='center'><a href='<?php echo $adminpath; ?>/p/templates&do=active&key=<?php echo $row['id']; ?>'><img src='./w/images/edit.gif' alt='Ativar'></a></td>
-                <td class='tablerow2' align='center'><a href='<?php echo $adminpath; ?>/p/templates&do=delete&key=<?php echo $row['id']; ?>'><img src='./w/images/del.gif' alt='Eliminar'></a></td>															
-            </tr>
+                <tr>
+                    <td class='tablerow1' align='center'><?php echo $row['id']; ?></td>
+                    <td class='tablerow2'><strong><?php echo Security::textFilterHK($row['name']); ?></strong><div class='desctext'><?php echo $row['longstory']; ?></div></td>
+                    <td class='tablerow2' align='left'><?php echo $row['version']; ?></td>
+                    <td class='tablerow2' align='left'><?php echo $row['creator']; ?></td>
+                    <td class='tablerow2' align='left'><?php echo $row['active']; ?></td>
+                    <td class='tablerow2' align='center'><a href='<?php echo $adminpath; ?>/p/templates&do=active&key=<?php echo $row['id']; ?>'><img src='./w/images/edit.gif' alt='Ativar'></a></td>
+                    <td class='tablerow2' align='center'><a href='<?php echo $adminpath; ?>/p/templates&do=delete&key=<?php echo $row['id']; ?>'><img src='./w/images/del.gif' alt='Eliminar'></a></td>															
+                </tr>
 
             <?php } ?>
 
@@ -188,52 +194,52 @@ if ($user_rank >= 7 AND $myrow['owner'] == 1)
 
 
 
-        <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         ?>
+        <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////          ?>
         <?php
         }
-        elseif ($do == "add")
+    elseif ($do == "add")
         {
         ?>
         <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     ?>
 
         <form  onSubmit="MirrorUpdate ();" action='<?php echo $adminpath; ?>/p/templates&do=add' method='post' name='theAdminForm' id='theAdminForm'>
-                    <div class='tableborder'>
-                        <div class='tableheaderalt'><center>Criar Template</center></div>
+            <div class='tableborder'>
+                <div class='tableheaderalt'><center>Criar Template</center></div>
 
-                        <table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
-                            <tr>
-                                <td class='tablerow1'  width='40%'  valign='middle'><b>Nome</b><div class='graytext'>Nome do Template</div></td>
-                                <td class='tablerow2'  width='60%'  valign='middle'><input type='text' name='plugin_name' value="" size='30' class='textinput'></td>
-                            </tr>
+                <table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
+                    <tr>
+                        <td class='tablerow1'  width='40%'  valign='middle'><b>Nome</b><div class='graytext'>Nome do Template</div></td>
+                        <td class='tablerow2'  width='60%'  valign='middle'><input type='text' name='plugin_name' value="" size='30' class='textinput'></td>
+                    </tr>
 
-                            <tr>
-                                <td class='tablerow1'  width='40%'  valign='middle'><b>Versao do Template</b><div class='graytext'>Verso do Template</div></td>
-                                <td class='tablerow2'  width='60%'  valign='middle'><input type='text' name='plugin_version' value="" size='30' class='textinput'></td>
-                            </tr>
+                    <tr>
+                        <td class='tablerow1'  width='40%'  valign='middle'><b>Versao do Template</b><div class='graytext'>Verso do Template</div></td>
+                        <td class='tablerow2'  width='60%'  valign='middle'><input type='text' name='plugin_version' value="" size='30' class='textinput'></td>
+                    </tr>
 
-                            <tr>
-                                <td class='tablerow1'  width='40%'  valign='middle'><b>Pasta do Template (/public/skins/NOMEDAPASTA/</b><div class='graytext'>Nome da pasta</div></td>
-                                <td class='tablerow2'  width='60%'  valign='middle'><input type='text' name='folder' value="" size='30' class='textinput'></td>
-                            </tr>
+                    <tr>
+                        <td class='tablerow1'  width='40%'  valign='middle'><b>Pasta do Template (/public/skins/NOMEDAPASTA/</b><div class='graytext'>Nome da pasta</div></td>
+                        <td class='tablerow2'  width='60%'  valign='middle'><input type='text' name='folder' value="" size='30' class='textinput'></td>
+                    </tr>
 
-                            <tr>
-                                <td class='tablerow1'  width='40%'  valign='middle'><b>Autor</b><div class='graytext'>Dono do Plugin?</div></td>
-                                <td class='tablerow2'  width='60%'  valign='middle'><input type='text' name='plugin_author' value="" size='30' class='textinput'></td>
-                            </tr>
+                    <tr>
+                        <td class='tablerow1'  width='40%'  valign='middle'><b>Autor</b><div class='graytext'>Dono do Plugin?</div></td>
+                        <td class='tablerow2'  width='60%'  valign='middle'><input type='text' name='plugin_author' value="" size='30' class='textinput'></td>
+                    </tr>
 
-                            <tr>
-                            <tr><td align='center' class='tablesubheader' colspan='2' ><input type="submit" class='button success tiny radius' style='margin-top: -10px;' name='submit' value='Criar Template' class='realbutton' accesskey='s'></td></tr>
+                    <tr>
+                    <tr><td align='center' class='tablesubheader' colspan='2' ><input type="submit" class='button success tiny radius' style='margin-top: -10px;' name='submit' value='Criar Template' class='realbutton' accesskey='s'></td></tr>
 
-                        </table>
+                </table>
 
-                    </div>
-                </div>
-                </form>
+            </div>
+        </div>
+        </form>
 
-        <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////          ?>
+        <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////           ?>
         <?php
         }
-        elseif ($do == "edit" && is_numeric($key))
+    elseif ($do == "edit" && is_numeric($key))
         {
         ?>
         <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     ?>
@@ -264,21 +270,21 @@ if ($user_rank >= 7 AND $myrow['owner'] == 1)
                     <tr><td align='center' class='tablesubheader' colspan='2' ><input type="submit" class='button success tiny radius' style='margin-top: -10px;' value='Actualizar Template' class='realbutton' accesskey='s'></td></tr>
                     </form></table></div><br />
 
-            <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         ?>
-            <?php } ?>
-            <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     ?>
+            <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////          ?>
+        <?php } ?>
+        <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     ?>
 
-        </div><!-- / RIGHT CONTENT BLOCK -->
-        </td></tr>
-        </table>
-        </div><!-- / OUTERDIV -->
-        <?php
-        require_once('footer.php');
-        }
-        else
-        {
-        require_once('error.php');
-        exit;
-        }
-        ?>
+    </div><!-- / RIGHT CONTENT BLOCK -->
+    </td></tr>
+    </table>
+    </div><!-- / OUTERDIV -->
+    <?php
+    require_once('footer.php');
+    }
+else
+    {
+    require_once('error.php');
+    exit;
+    }
+?>
 

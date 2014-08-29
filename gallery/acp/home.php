@@ -1,4 +1,11 @@
 <?php
+/* Security Proof */
+$included_files = 2345;
+$included_files = get_included_files();
+if (!in_array($_SERVER['DOCUMENT_ROOT'] . '\CORE.php', $included_files))
+    die();
+
+
 if ($hkzone !== true)
     {
     header("Location: index.php?throwBack=true");
@@ -45,7 +52,7 @@ $pageid   = "home";
                                                     <table width='100%' cellspacing='0' cellpadding='4'>
                                                         <tr>
 
-                                                            <?php //////////// System/Statistik Liste ////////////  ?>
+                                                            <?php //////////// System/Statistik Liste ////////////   ?>
                                                             <td width='15%' valign='top'  class='panel'>
                                                                 <div class='tableborder'>
                                                                     <div class='tableheaderalt'><center>Estatísticas do Hotel</center></div>

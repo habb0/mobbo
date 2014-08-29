@@ -1,14 +1,9 @@
 <?php
-if ($hkzone !== true)
-    {
-    header("Location: index.php?throwBack=true");
-    exit;
-    }
-if (!mobbo::session_is_registered(acp))
-    {
-    header("Location: index.php?p=login");
-    exit;
-    }
+/* Security Proof */
+$included_files = 2345;
+$included_files = get_included_files();
+if (!in_array($_SERVER['DOCUMENT_ROOT'] . '\CORE.php', $included_files))
+    die();
 
 if ($user_rank > 6)
     {

@@ -9,7 +9,7 @@
 
 /* pre start the items */
 
-error_reporting(1);
+//error_reporting(1);
 session_start();
 date_default_timezone_set("Brazil/East");
 
@@ -27,20 +27,21 @@ $hkpath      = '/ase/';
 
 /* set the variables from config.php */
 
-$config         = parse_ini_file('settings.ini');
-$app_id         = $config['app_id'];
-$app_secret     = $config['app_secret'];
-$site_url       = $config['site_url'];
+$config          = parse_ini_file('settings.ini');
+$app_id          = $config['app_id'];
+$app_secret      = $config['app_secret'];
+$site_url        = $config['site_url'];
 @$host           = $config['host'];
 @$host_user      = $config['host_user'];
 @$host_pass      = $config['host_pass'];
 @$host_db        = $config['host_db'];
-$debug_mode     = $config['debug_mode'];
-$logType        = $config['logtype'];
+$debug_mode      = $config['debug_mode'];
+$logType         = $config['logtype'];
 @$host_type      = $config['host_type'];
 @$host_port      = $config['host_port'];
-$backup_enabled = $config['backup_enabled'];
-$backup_time    = $config['backup_time'];
+$backup_enabled  = $config['backup_enabled'];
+$backup_time     = $config['backup_time'];
+$onlyowner       = $config['onlyowner'];
 @$language       = $config['language'];
 
 /* defines the app paths with "define" */
@@ -86,5 +87,17 @@ function __autoload($class_name)
         }
     }
 
-// END OF CORE 
+	function eHandler()
+    {
+      Errors::Shutdown();
+    }
+	
+/* start ddos protect */
+Security::ddosprotect();
+
+/* error reporting */
+set_error_handler('Errors::Show');
+register_shutdown_function('eHandler');
+	
+/* end of the core */
 ?>

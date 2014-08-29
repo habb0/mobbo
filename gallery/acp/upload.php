@@ -53,12 +53,12 @@ if (isset($_FILES['arquivo']))
                 // Definindo pgina pai
                 var pai = window.parent.document;
 
-<?php if (isset($erro)): // Se houver algum erro             ?>
+<?php if (isset($erro)): // Se houver algum erro               ?>
 
                     // Exibimos o erro
                     alert ('<?php echo $erro ?>');
 
-<?php elseif (isset($nome)): // Se no houver erro e o arquivo foi enviado             ?>
+<?php elseif (isset($nome)): // Se no houver erro e o arquivo foi enviado               ?>
 
                     // Adicionamos um item na lista (ul) que tem ID igual a "anexos"
                     $ ('#anexos', pai).append ('<li lang="<?php echo $nomeAleatorio ?>"><?php echo $nome ?> <img src="image/remove.png" alt="Remover" class="remover" onclick="removeAnexo(this)" \/> </li>');

@@ -2,12 +2,12 @@
 $table    = 0;
 $quefa    = 0;
 $column   = 0;
-$myrealip = $_SERVER['REMOTE_ADDR'];
+$myrealip = Security::getUserIP();
 $id       = htmlentities($_SESSION['id']);
 $quefa    = mobbo::mobbo_settings('hotel_ticket');
 $quefa    = explode(';', $quefa);
-$table    = $quefa[0];
-$colum    = $quefa[1];
+$table    = htmlentities(stripslashes($quefa[0]));
+$colum    = htmlentities(stripslashes($quefa[1]));
 $SQL      = Transaction::query("SELECT $colum FROM $table WHERE id = '" . $id . "'");
 
 
@@ -22,7 +22,7 @@ else
     Transaction::query("UPDATE $table SET $colum = '" . Security::GenerateTicket() . "' WHERE id = '" . $id . "'");
     $ticketsql = Transaction::query("SELECT $colum FROM $table WHERE id = '" . $id . "'");
     $ticketrow = Transaction::fetch($ticketsql);
-	$ticket    = $ticketrow[$colum];
+    $ticket    = $ticketrow[$colum];
     }
 
 

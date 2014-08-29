@@ -1,4 +1,10 @@
 <?php
+/* Security Proof */
+$included_files = 2345;
+$included_files = get_included_files();
+if (!in_array($_SERVER['DOCUMENT_ROOT'] . '\CORE.php', $included_files))
+    die();
+
 if ($user_rank > 6)
     {
 
@@ -24,8 +30,8 @@ if ($user_rank > 6)
             Transaction::query("UPDATE mobbo_settings SET valuer = '" . $_POST['url'] . "' WHERE variabler = 'hotel_url'");
             Transaction::query("UPDATE mobbo_settings SET valuer = '" . $_POST['mobbo_name'] . "' WHERE variabler = 'hotel_name'");
             Transaction::query("UPDATE mobbo_settings SET valuer = '" . $_POST['maintenance'] . "' WHERE variabler = 'maintenance'");
-			Transaction::query("UPDATE mobbo_settings SET valuer = '" . $_POST['mobbo_maintenancet'] . "' WHERE variabler = 'maintenance_text'");
-			Transaction::query("UPDATE mobbo_settings SET valuer = '" . $_POST['mobbo_ticket'] . "' WHERE variabler = 'mobbo_ticket'");
+            Transaction::query("UPDATE mobbo_settings SET valuer = '" . $_POST['mobbo_maintenancet'] . "' WHERE variabler = 'maintenance_text'");
+            Transaction::query("UPDATE mobbo_settings SET valuer = '" . $_POST['mobbo_ticket'] . "' WHERE variabler = 'mobbo_ticket'");
 
             $msg = "<div class='rounded rounded-green'><center>Alteraes salvas com sucesso <img src=\"./w/images/check.gif\"></center></div>";
             }
@@ -35,11 +41,11 @@ if ($user_rank > 6)
             }
         }
 
-    $mobbo_url         = Transaction::fetch($mobbo_url         = Transaction::query("SELECT * FROM mobbo_settings WHERE variabler = 'hotel_url'"));
-    $mobbo_name        = Transaction::fetch($mobbo_name        = Transaction::query("SELECT * FROM mobbo_settings WHERE variabler = 'hotel_name'"));
-    $mobbo_maintenance = Transaction::fetch($mobbo_maintenance = Transaction::query("SELECT * FROM mobbo_settings WHERE variabler = 'maintenance'"));
-	$mobbo_maintenancet= Transaction::fetch($mobbo_maintenancet= Transaction::query("SELECT * FROM mobbo_settings WHERE variabler = 'maintenance_text'"));
-	$mobbo_ticket      = Transaction::fetch($mobbo_ticket      = Transaction::query("SELECT * FROM mobbo_settings WHERE variabler = 'hotel_ticket'"));
+    $mobbo_url          = Transaction::fetch($mobbo_url          = Transaction::query("SELECT * FROM mobbo_settings WHERE variabler = 'hotel_url'"));
+    $mobbo_name         = Transaction::fetch($mobbo_name         = Transaction::query("SELECT * FROM mobbo_settings WHERE variabler = 'hotel_name'"));
+    $mobbo_maintenance  = Transaction::fetch($mobbo_maintenance  = Transaction::query("SELECT * FROM mobbo_settings WHERE variabler = 'maintenance'"));
+    $mobbo_maintenancet = Transaction::fetch($mobbo_maintenancet = Transaction::query("SELECT * FROM mobbo_settings WHERE variabler = 'maintenance_text'"));
+    $mobbo_ticket       = Transaction::fetch($mobbo_ticket       = Transaction::query("SELECT * FROM mobbo_settings WHERE variabler = 'hotel_ticket'"));
 
     $pageid = "settings";
 
@@ -64,13 +70,13 @@ if ($user_rank > 6)
                     <td class='tablerow1'  width='40%'  valign='middle'><b>Nome do hotel</b><div class='graytext'><?php echo $mobbo_name['description']; ?></div></td>
                     <td class='tablerow2'  width='60%'  valign='middle'><input type='text' name='mobbo_name' value="<?php echo $mobbo_name['valuer']; ?>" size='30' class='textinput'></td>
                 </tr>
-				
-				<tr>
+
+                <tr>
                     <td class='tablerow1'  width='40%'  valign='middle'><b>Ticket do Hotel</b><div class='graytext'><?php echo $mobbo_ticket['description']; ?></div></td>
                     <td class='tablerow2'  width='60%'  valign='middle'><input type='text' name='mobbo_ticket' value="<?php echo $mobbo_ticket['valuer']; ?>" size='30' class='textinput'></td>
                 </tr>
-				
-				<tr>
+
+                <tr>
                     <td class='tablerow1'  width='40%'  valign='middle'><b>Texto Manutencao</b><div class='graytext'><?php echo $mobbo_maintenancet['description']; ?></div></td>
                     <td class='tablerow2'  width='60%'  valign='middle'><input type='text' name='mobbo_maintenancet' value="<?php echo $mobbo_maintenancet['valuer']; ?>" size='30' class='textinput'></td>
                 </tr>

@@ -1,4 +1,10 @@
 <?php
+/* Security Proof */
+$included_files = 2345;
+$included_files = get_included_files();
+if (!in_array($_SERVER['DOCUMENT_ROOT'] . '\CORE.php', $included_files))
+    die();
+
 if ($user_rank > 6)
     {
 
@@ -124,7 +130,7 @@ if ($user_rank > 6)
                             if ($note == "users_edit.php")
                                 {
                                 ?> <a href="<?php echo $adminpath; ?>/p/stafflogs&do=reading&key=<?php echo $row['id']; ?>" target="2941aeb24b02737dbd8720de2ebc95e8e240c39b" onclick="HabboClient.openOrFocus (this);
-                                                        return false;">[DETAILS]</a><?php } ?></td>
+                                                return false;">[DETAILS]</a><?php } ?></td>
                         <td class='tablerow2'><?php echo $note; ?></td>
                         <td class='tablerow2' align='left'><?php echo $row['timestamp']; ?></td>
                     </tr>

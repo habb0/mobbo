@@ -35,7 +35,7 @@ if (isset($_POST['searchname']))
     <head>
 
         <base href="<?php echo $adminpath; ?>">        
-		<meta http-equiv="content-t ype" content="text/html; charset=iso-8859-1" /> 
+        <meta http-equiv="content-t ype" content="text/html; charset=iso-8859-1" /> 
         <title><?php echo $pnme; ?></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,10 +47,10 @@ if (isset($_POST['searchname']))
 
 
         <link type="text/css" rel="stylesheet" href="../web-gallery/css/marketing.css">
-		<script src="../web-gallery/js/jquery.js"></script>
+        <script src="../web-gallery/js/jquery.js"></script>
         <link href="../web-gallery/css/foundation.css" rel="stylesheet">
 
-  
+
         <link href="/js/google-code-prettify/prettify.css" rel="stylesheet" type="text/css">
         <style>
             table tbody tr td:last-child {
@@ -59,16 +59,16 @@ if (isset($_POST['searchname']))
             }
         </style>
     <nav class="top-bar" data-topbar>
-    <ul class="title-area">
-      <li class="name">
-      <h1><a>Housekeeping</a></h1>
-      </li>
-    </ul>
-	<section class="top-bar-section" id="fudeugeral">
-	<ul class="right">
-      <li class="has-dropdown active">
-        <a href="#">Menu</a>
-        <ul class="dropdown">
+        <ul class="title-area">
+            <li class="name">
+                <h1><a>Housekeeping</a></h1>
+            </li>
+        </ul>
+        <section class="top-bar-section" id="fudeugeral">
+            <ul class="right">
+                <li class="has-dropdown active">
+                    <a href="#">Menu</a>
+                    <ul class="dropdown">
                         <li><a href="p/home">Principal</a></li>
                         <li><a href="p/settings">Configurações</a></li>
                         <li><a href="p/alert">Alertas</a></li>
@@ -82,49 +82,49 @@ if (isset($_POST['searchname']))
                         <li><a href="p/ranktool">Cargos</a></li>
                         <li><a href="p/viptool">Ferramenta VIP</a></li>
                         <li><a href="p/marktplatz">Loja</a></li>
-        </ul>
-      </li>
-    </ul>
+                    </ul>
+                </li>
+            </ul>
 
-	 <ul class="left">
-      <li><a href="/">Go to Home</a></li>
-	  <li><a href="/client">Go to Client</a></li>
-    </ul>
-  </section>
-  </section>
-
-
-
-
-
-    </nav>
-
-    <?php
-    if ($pageid !== "login")
-        {
-        ?>
-
-        <body>
+            <ul class="left">
+                <li><a href="/">Go to Home</a></li>
+                <li><a href="/client">Go to Client</a></li>
+            </ul>
+        </section>
+    </section>
 
 
 
 
 
+</nav>
+
+<?php
+if ($pageid !== "login")
+    {
+    ?>
+
+    <body>
 
 
-                        <p><p><p>
-                        <div class='outerdiv' id='global-outerdiv'>
-                            <?php
-                            } if ($pageid !== "login" && $pageid !== "home")
-                            {
-                            ?>
-                            <table cellpadding='0' cellspacing='8' width='100%' id='tablewrap'>
-                                <tr> <td width='16%' valign='top' id='leftblock'>
-                                        <div>
-                                            <?php @include('menu.php'); ?>
-                                        </div>
-                                    </td>
-                                    <td width='78%' valign='top' id='rightblock'>
-                                        <div>
-                                            </p> </p> </p>
-                                        <?php } ?>
+
+
+
+
+
+        <p><p><p>
+        <div class='outerdiv' id='global-outerdiv'>
+            <?php
+            } if ($pageid !== "login" && $pageid !== "home")
+            {
+            ?>
+            <table cellpadding='0' cellspacing='8' width='100%' id='tablewrap'>
+                <tr> <td width='16%' valign='top' id='leftblock'>
+                        <div>
+                            <?php @include('menu.php'); ?>
+                        </div>
+                    </td>
+                    <td width='78%' valign='top' id='rightblock'>
+                        <div>
+                            </p> </p> </p>
+                        <?php } ?>
