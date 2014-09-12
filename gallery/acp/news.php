@@ -324,12 +324,12 @@ if ($user_rank > 5)
 
                     <tr>
                         <td class='tablerow1'  width='40%'  valign='middle'><b>Resumo</b><div class='graytext'>Resumo da Notcia</div></td>
-                        <td class='tablerow2'  width='60%'  valign='middle'><input type='text' name='longstory' value="<?php echo $article['longstory']; ?>" size='30' class='textinput'></td>
+                        <td class='tablerow2'  width='60%'  valign='middle'><input type='text' name='shortstory' value="<?php echo $article['longstory']; ?>" size='30' class='textinput'></td>
                     </tr>
 
                     <tr>
                         <td class='tablerow1'  width='40%'  valign='middle'><b>Histria</b><div class='graytext'>Notcia<br /><font color="green"></font></div></td>
-                        <td class='tablerow2'  width='60%'  valign='middle'><textarea id="story" name="shortstory" cols='60' rows='8' style="width: 8%"><?php echo $article['shortstory']; ?></textarea></td>
+                        <td class='tablerow2'  width='60%'  valign='middle'><textarea id="story" name="longstory" cols='60' rows='8' style="width: 8%"><?php echo $article['shortstory']; ?></textarea></td>
                     </tr>
                     <script type="text/javascript" src="./w/tiny_mce/tiny_mce.js"></script>
                     <script type="text/javascript">

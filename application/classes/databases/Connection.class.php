@@ -69,7 +69,7 @@ final
                 }
             }
 
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // define para que o PDO lance exce��es na ocorr�ncia de erros
         // retorna o objeto instanciado.
         return $conn;

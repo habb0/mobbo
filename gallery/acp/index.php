@@ -44,10 +44,8 @@ $maintenance = ( mobbo::mobbo_settings('maintenance') != 0 ) ? mobbo::mobbo_sett
 // check the settings rows for the housekeeping
 // Transaction::query ( "UPDATE mobbo_settings SET value = 'mobbo-c9-sant0ro.c9.io' WHERE variable = 'hotel_url'" ) ;
 $config    = Transaction::fetch($mobbo_settings);
-$sitename  = ( mobbo::mobbo_settings('hotel_name') != 0 ) ? mobbo::mobbo_settings('hotel_name') : 'Hotel';
-$path      = ( mobbo::mobbo_settings('hotel_url') != 0 ) ? mobbo::mobbo_settings('hotel_url') : 'http://localhost';
-if ($path != $_SERVER['REMOTE_ADDR'] AND $path != 'http://localhost')
-    $path      = $_SERVER['REMOTE_ADDR'];
+$sitename  = mobbo::mobbo_settings('hotel_name');
+$path      = mobbo::mobbo_settings('hotel_url');
 $onlines   = $online_count;
 $shortname = $mobbo_name;
 $adminpath = $path . "/acp/";

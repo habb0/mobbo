@@ -111,7 +111,7 @@ final
             {
             if (DEBUGMODE >= 1)
                 {
-                print "Erro! " . $ex->getMessage() . "</br>";
+                print "Erro! "; //. $ex->getMessage() . "</br>";
                 if (DEBUGMODE >= 2)
                     {
                     die();
@@ -140,7 +140,7 @@ final
             {
             if (DEBUGMODE >= 1)
                 {
-                print "Erro! " . $ex->getMessage() . "</br>";
+                print "Erro! "; //. $ex->getMessage() . "</br>";
                 if (DEBUGMODE >= 2)
                     {
                     die();
@@ -169,7 +169,7 @@ final
             {
             if (DEBUGMODE >= 1)
                 {
-                print "Erro! " . $ex->getMessage() . "</br>";
+                print "Erro! "; //. $ex->getMessage() . "</br>";
                 if (DEBUGMODE >= 2)
                     {
                     die();
@@ -201,7 +201,7 @@ final
             {
             if (DEBUGMODE >= 1)
                 {
-                print "Erro! " . $ex->getMessage() . "</br>";
+                print "Erro! "; //. $ex->getMessage() . "</br>";
                 if (DEBUGMODE >= 2)
                     {
                     die();
@@ -214,11 +214,11 @@ final
             function evaluate($query)
         {
         $result = Transaction::query($query);
+		$michae = Transaction::num_rows($result);
 
-        if (Transaction::num_rows($result) > 1)
+        if ($michae >= 1)
             {
-			$result = Transaction::query($query);
-            return Transaction::num_rows($result);
+            return $michae;
             }
 		else
 		    return 0;

@@ -209,6 +209,13 @@ PAGE;
                                     {
                                     if (preg_match('`[0-9]`', $_POST['pass']))
                                         {
+										if (count(explode(' ', $usuario)) > 1) {
+										echo('Sem Espaço Em Branco Pls');
+										}
+										else
+										{
+                                        if(mb_strlen($usuario) <= 25)
+										{
 
                                         Transaction::query("INSERT INTO `users` (`username`, `password`, `mail`) VALUES ('" . $usuario . "', '" . $pass . "', '" . $mail . "');");
 
@@ -227,6 +234,9 @@ PAGE;
                                             }
                                         echo 'OKAY';
                                         }
+										else{ echo 'Menos Caracteres Pls'; }
+										}
+										}
                                     else
                                         {
                                         echo('Esta senha a muito curta e/ou invalida');

@@ -22,7 +22,7 @@ if ($user_rank > 5)
     $pagename = "Usurios do Hotel";
     $pageid   = "users";
 
-    $posts = Transaction::evaluate("SELECT COUNT(*) FROM USERS");
+    $posts = Transaction::evaluate("SELECT * FROM USERS");
     $pages = ceil(($posts + 0) / 50);
 
     if ($page > $pages || $page < 1)
@@ -40,8 +40,8 @@ if ($user_rank > 5)
         header("location: " . $adminpath . "/p/users&page=" . $_POST['page2'] . "");
         }
 
-    $users_today     = Transaction::evaluate("SELECT COUNT(*) FROM users WHERE account_created > '" . strtotime("today") . "'");
-    $users_yesterday = Transaction::evaluate("SELECT COUNT(*) FROM users WHERE account_created > '" . strtotime("yesterday") . "' && account_created < '" . strtotime("today") . "'");
+    $users_today     = Transaction::evaluate("SELECT * FROM users WHERE account_created > '" . strtotime("today") . "'");
+    $users_yesterday = Transaction::evaluate("SELECT * FROM users WHERE account_created > '" . strtotime("yesterday") . "' && account_created < '" . strtotime("today") . "'");
 
     $zwischenround = round(100 / $users_yesterday * $users_today);
 
@@ -70,7 +70,7 @@ if ($user_rank > 5)
         $color = "green";
         }
 
-    $header = "" . Transaction::evaluate("SELECT COUNT(*) FROM users") . " Usuarios registrados</div><center>Registrados - (Hoje): " . $users_today . " | (Ontem): " . $users_yesterday . " = <font color=\"" . $color . "\">" . $icon . "" . $rounded . "%</font>";
+    $header = "" . Transaction::evaluate("SELECT * FROM users") . " Usuarios registrados</div><center>Registrados - (Hoje): " . $users_today . " | (Ontem): " . $users_yesterday . " = <font color=\"" . $color . "\">" . $icon . "" . $rounded . "%</font>";
     @include('subheader.php');
     ?>
 

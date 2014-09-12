@@ -9,7 +9,7 @@
 
 /* pre start the items */
 
-//error_reporting(1);
+error_reporting(1);
 session_start();
 date_default_timezone_set("Brazil/East");
 
@@ -43,6 +43,17 @@ $backup_enabled  = $config['backup_enabled'];
 $backup_time     = $config['backup_time'];
 $onlyowner       = $config['onlyowner'];
 @$language       = $config['language'];
+
+if(isset($_COOKIE['language']))
+{
+@$language = htmlentities(stripslashes($_COOKIE['language']));
+}
+if(isset($_GET['language']))
+{
+@$language = htmlentities(stripslashes($_GET['language']));
+setcookie('language', $language);
+}
+
 
 /* defines the app paths with "define" */
 

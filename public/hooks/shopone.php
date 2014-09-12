@@ -12,7 +12,7 @@
                                     $query_min = 0;
                                     }
 
-                                $get_marktplatz = Transaction::query("SELECT * FROM mobbo_marktplatzvip ORDER BY id DESC LIMIT " . $query_min . ", 50") or die(mysql_error());
+                                $get_marktplatz = Transaction::query("SELECT * FROM mobbo_shop ORDER BY id DESC LIMIT " . $query_min . ", 50") or die(mysql_error());
                                 while ($row            = Transaction::fetch($get_marktplatz))
                                     {
                                     ?>

@@ -64,7 +64,7 @@ $pageid   = "home";
 
                                                                         <tr>
                                                                             <td class='tablerow1'>Emblemas</td>
-                                                                            <td class='tablerow1'><a><?php echo Transaction::evaluate("SELECT * FROM users_badges"); ?></td>
+                                                                            <td class='tablerow1'><a><?php echo Transaction::evaluate("SELECT * FROM user_badges"); ?></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td class='tablerow2'>Banimentos</td>
